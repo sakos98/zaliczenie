@@ -16,6 +16,10 @@ public class Main {
         Animal mause = new Animal("mause");
         mause.name = "Jerry";
 
+        Car car = new Car("Porhe", "GT3", "2020", 2000.0);
+        me.car = car;
+        System.out.println(me.car.model);
+
         mause.feed();
         mause.takeForAWalk();
         mause.feed();
