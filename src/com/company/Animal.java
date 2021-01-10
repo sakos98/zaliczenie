@@ -26,8 +26,39 @@ public class Animal
 
     void feed()
     {
-        weight++;
-        System.out.println("thx for fod bro, my weight is now " + weight);
+        if(weight <= 0)
+        {
+            System.out.println("Your pet " +name +" is dead :(");
+        }
+        else
+        {
+            weight++;
+            System.out.println("Thanks for food, my weight is now "+weight);
+        }
+
+    }
+
+    void takeForAWalk()
+    {
+
+        if (weight > 1)
+        {
+            weight--;
+            if (weight <= 0)
+            {
+                weight = 0.0;
+                System.out.println("Your pet " +name+ " died");
+            }
+            else
+            {
+                System.out.println("Thanks for a walk ;) my weight is now " +weight);
+            }
+        }
+        else
+        {
+            weight= 0.0;
+            System.out.println("Your pet "+name+" died");
+        }
     }
 
 }

@@ -13,8 +13,11 @@ public class Main {
         Human me = new Human("Michał", "Sak");
         me.pet = dog;
 
-        System.out.println(me.pet.name);
+        Animal mause = new Animal("mause");
+        mause.name = "Jerry";
 
-        dog.feed();
+        mause.feed();
+        mause.takeForAWalk();
+        mause.feed();
     }
 }
