@@ -8,7 +8,7 @@ public class Human {
     String lastName;
     Phone phone;
     Animal pet;
-    Car car;
+    private Car car;
     private  Double salary;
 
     public Human()
@@ -37,6 +37,22 @@ public class Human {
             System.out.println("Annex from the contract must be collected from Mrs Hanna from HR.");
             System.out.println("ZUS and US already know about salary change. There is no point hiding it.");
             this.salary = salary;
+        }
+    }
+
+    public Car getCar(){
+        return car;
+    }
+
+    public void setCar(Car car){
+        if(salary > car.value){
+            System.out.println("The car was bought for cash.");
+            this.car = car;
+        }else if(salary * 12 > car.value){
+            System.out.println("The car was bought on credit");
+            this.car = car;
+        }else {
+            System.out.println("Change your work, ask for rise, your salary is too low for that car");
         }
     }
 }
