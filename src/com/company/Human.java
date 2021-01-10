@@ -1,5 +1,8 @@
 package com.company;
 
+import devices.Car;
+import devices.Phone;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -9,7 +12,11 @@ public class Human {
     Phone phone;
     Animal pet;
     private Car car;
-    private  Double salary;
+    private  Double salary = 5000.0;
+
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 
     public Human()
     {
@@ -45,14 +52,15 @@ public class Human {
     }
 
     public void setCar(Car car){
-        if(salary > car.value){
+        if(salary > car.getValue()){
             System.out.println("The car was bought for cash.");
             this.car = car;
-        }else if(salary * 12 > car.value){
+        }else if(salary * 12 > car.getValue()){
             System.out.println("The car was bought on credit");
             this.car = car;
         }else {
             System.out.println("Change your work, ask for rise, your salary is too low for that car");
         }
     }
+
 }

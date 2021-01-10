@@ -4,7 +4,7 @@ public class Animal
 {
     String name;
     String species;
-    private Double weight;
+    private Double weight = 20.0;
     static final Double DEAFULT_DOG_WEIGHT = 8.8;
 
     public Animal(String species)
@@ -59,6 +59,10 @@ public class Animal
             weight= 0.0;
             System.out.println("Your pet "+name+" died");
         }
+    }
+
+    public String toString(){
+        return name + " " + species + " " + weight;
     }
 
 }
