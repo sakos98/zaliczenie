@@ -23,5 +23,7 @@ public class Main {
         mause.feed();
         mause.takeForAWalk();
         mause.feed();
+        me.setSalary(5000.0);
+        me.getSalary();
     }
 }
