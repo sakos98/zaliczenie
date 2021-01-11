@@ -1,4 +1,6 @@
 package devices;
+import com.company.Human;
+
 import java.util.Objects;
 
 public class Car extends Device {
@@ -52,4 +54,26 @@ public class Car extends Device {
     public void turnOn() {
         System.out.println("Device is turned on");
     }
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(seller.getCar() != null)
+        {
+            if (buyer.getCash() >= price)
+            {
+                buyer.setCash(-price);
+                seller.setCash(price);
+                buyer.setCar(this);
+                seller.setCar(null);
+                System.out.println(buyer.toString() + " bought " + this.toString() + " from " + seller.toString() + " for " + price + "$");
+            }
+            else {
+                System.out.println(buyer.toString() + " has not enough money");
+            }
+        }
+        else {
+            System.out.println(seller.toString() + " hasn't got any car to sell");
+        }
+    }
+
+
 }

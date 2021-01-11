@@ -31,6 +31,8 @@ public class Main {
 
         Phone phone = new Phone("Xiaomi", "MI 9 SE", "2019");
 
+        Human human = new Human("Krzysztof", "Krawczyk");
+
         System.out.println((car).equals(car2));
         me.setCar(car);
 
