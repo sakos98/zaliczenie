@@ -1,6 +1,7 @@
 package com.company;
 
 import devices.Car;
+import devices.Phone;
 
 public class Main {
 
@@ -28,8 +29,9 @@ public class Main {
             System.out.println("The id is different, that means objects are not equal");
         }
 
-        System.out.println((car).equals(car2));
+        Phone phone = new Phone("Xiaomi", "MI 9 SE", "2019");
 
+        System.out.println((car).equals(car2));
         me.setCar(car);
 
         mause.feed();
@@ -37,5 +39,9 @@ public class Main {
         mause.feed();
         me.setSalary(5000.0);
         me.getSalary();
+        car2.turnOn();
+        phone.turnOn();
+        System.out.println(car2.toString());
+        System.out.println(phone.toString());
     }
 }
