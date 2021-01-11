@@ -3,10 +3,12 @@ import com.company.Human;
 
 import java.util.Objects;
 
-public class Car extends Device {
+public abstract class Car extends Device {
     final String producer;
     final String model;
     final String yearOffProduction;
+    public Double resource = 30.0;
+    public Double capacityOfResource = 100.0;
 
     public Double getValue() {
         return value;
@@ -32,6 +34,9 @@ public class Car extends Device {
         this.yearOffProduction = yearOffProduction;
         this.value = value;
     }
+
+    public abstract void refuel(double qunatity);
+
     @Override
     public boolean equals(Object o){
         if (this == o) return true;
