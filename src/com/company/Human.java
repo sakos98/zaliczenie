@@ -1,5 +1,6 @@
 package com.company;
 
+import creatures.Animal;
 import devices.Car;
 import devices.Phone;
 
@@ -10,7 +11,7 @@ public class Human {
     String firstName;
     String lastName;
     Phone phone;
-    Animal pet;
+    private Animal pet;
     private Car car;
     private  Double salary = 5000.0;
     private  Double cash = 100.0;
@@ -84,6 +85,14 @@ public class Human {
         }else {
             System.out.println("Change your work, ask for rise, your salary is too low for that car");
         }
+    }
+
+    public Animal getPet() {
+        return pet;
+    }
+
+    public void setPet(Animal pet) {
+        this.pet = pet;
     }
 
 }

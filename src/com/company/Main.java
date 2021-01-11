@@ -1,5 +1,7 @@
 package com.company;
 
+import creatures.Animal;
+import creatures.Pet;
 import devices.Car;
 import devices.Phone;
 
@@ -7,17 +9,16 @@ public class Main {
 
     public static void main(String[] args)
     {
-        Animal dog = new Animal("dog");
-        dog.name = "Chmurka";
 
-        Animal lion = new Animal ("lion");
-        lion.name = "Leo";
+        Animal dog = new Pet("Chmurka", "dog", 10.0);
+
+
+        Animal lion = new Pet("Leo", "Lion", 100.0);
 
         Human me = new Human("Michał", "Sak");
-        me.pet = dog;
+        me.setPet(dog);
 
-        Animal mause = new Animal("mause");
-        mause.name = "Jerry";
+        Animal mause = new Pet("Mikki", "Mause", 2.0);
 
         Car car = new Car("Porhe", "GT3", "2020", 2000.0);
         Car car2 = new Car("Ferrari", "Roma", "2019", 10000.0);
@@ -37,12 +38,13 @@ public class Main {
         me.setCar(car);
 
         mause.feed();
-        mause.takeForAWalk();
+
         mause.feed();
         me.setSalary(5000.0);
         me.getSalary();
         car2.turnOn();
         phone.turnOn();
+        me.getPet().feed(1.2);
         System.out.println(car2.toString());
         System.out.println(phone.toString());
     }
