@@ -18,7 +18,7 @@ public abstract class Car extends Device {
         this.value = value;
     }
 
-    Double value;
+    public Double value;
 
     public Car(String producer, String model, String yearOffProduction){
 
@@ -54,31 +54,34 @@ public abstract class Car extends Device {
    // }
 
     public String toString() {
+
         return producer + " " + model + " " + yearOffProduction + " " + value;
     }
+
     public void turnOn() {
+
         System.out.println("Device is turned on");
     }
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
-        if(seller.getCar() != null)
+
+    public void sell(Human seller, Human buyer, Double price, Integer garagePlace) throws Exception {
+        if (seller.getCar(garagePlace) == null)
         {
-            if (buyer.getCash() >= price)
-            {
-                buyer.setCash(-price);
-                seller.setCash(price);
-                buyer.setCar(this);
-                seller.setCar(null);
-                System.out.println(buyer.toString() + " bought " + this.toString() + " from " + seller.toString() + " for " + price + "$");
-            }
-            else {
-                System.out.println(buyer.toString() + " has not enough money");
-            }
-        }
-        else {
-            System.out.println(seller.toString() + " hasn't got any car to sell");
+            throw new Exception("Seller hasn't this car");
+        }else if (buyer.isFreePlace() == false)
+        {
+            throw new Exception("Buyer hasn't place in garage");
+        }else if (buyer.getCash() < price)
+        {
+
+            throw new Exception("Buyer hasn't got money");
+        }else
+        {
+            seller.removeCar(this);
+            buyer.addCar(this);
+            seller.setCash(seller.getCash() + price);
+            buyer.setCash(buyer.getCash() - price);
+            System.out.println("Transaction successful");
         }
     }
-
-
 }
+
